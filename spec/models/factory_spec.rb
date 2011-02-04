@@ -20,7 +20,7 @@ describe Factory do
     second.should_not be_valid
   end
   
-  it "should have a name with a maximum 20 characters" do
+  it "should have a name with a maximum 20 characters (yeah)" do
     something = Factory.create(:name => '123456789012345678901', :location => 'here')
     
     something.should_not be_valid
