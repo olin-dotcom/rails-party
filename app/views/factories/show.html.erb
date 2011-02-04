@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @factory.name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @factory.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_factory_path(@factory) %> |
+<%= link_to 'Back', factories_path %>

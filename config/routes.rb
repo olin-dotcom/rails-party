@@ -1,4 +1,6 @@
 RailsParty::Application.routes.draw do
+  resources :factories
+
   resources :widgets
   root :to => "widgets#index"
   
