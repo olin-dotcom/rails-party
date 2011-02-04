@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110204201739) do
+ActiveRecord::Schema.define(:version => 20110204205156) do
 
   create_table "factories", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20110204201739) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "price"
+    t.integer  "factory_id"
   end
 
 end

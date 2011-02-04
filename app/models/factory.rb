@@ -1,4 +1,6 @@
 class Factory < ActiveRecord::Base
+  has_many :widgets
+  
   validates :name, :location, :presence => true
   validates :name, :uniqueness => true
   validates :name, :length => {:maximum => 20}
