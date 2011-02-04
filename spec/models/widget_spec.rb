@@ -1,6 +1,17 @@
 require 'spec_helper'
 
 describe Widget do
+  
+  # it "should belong to an existing factory" do
+  #   my_factory = Factory.create(:name => 'name', :location => 'location')
+  #   my_widget = Widget.create(:name => 'name', 
+  #                             :price => 3, 
+  #                             :description => 'description',
+  #                             :factory_id => my_factory[:id] + 1 )
+  #   my_factory.should be_valid
+  #   my_widget.should_not be_valid
+  # end
+  
   it "should have a name" do
     bad_widget = Widget.create(:name => '', 
                                :description => 'description',
@@ -76,6 +87,7 @@ describe Widget do
     
 end
 
+
 # == Schema Information
 #
 # Table name: widgets
@@ -86,5 +98,6 @@ end
 #  created_at  :datetime
 #  updated_at  :datetime
 #  price       :decimal(, )
+#  factory_id  :integer
 #
 

@@ -6,6 +6,7 @@ class Widget < ActiveRecord::Base
   validates :name, :uniqueness => true
 end
 
+
 # == Schema Information
 #
 # Table name: widgets
@@ -16,5 +17,6 @@ end
 #  created_at  :datetime
 #  updated_at  :datetime
 #  price       :decimal(, )
+#  factory_id  :integer
 #
 

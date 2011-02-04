@@ -5,6 +5,7 @@
     <th>Name</th>
 	<th>Price</th>
     <th>Description</th>
+	<th>Factory ID</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +16,7 @@
     <td><%= widget.name %></td>
 	<td><%= widget.price %></td>
     <td><%= widget.description %></td>
+    <td><%= widget.factory_id %></td>
     <td><%= link_to 'Show', widget %></td>
     <td><%= link_to 'Edit', edit_widget_path(widget) %></td>
     <td><%= link_to 'Destroy', widget, :confirm => 'Are you sure?', :method => :delete %></td>

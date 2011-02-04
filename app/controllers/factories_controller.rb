@@ -14,6 +14,7 @@ class FactoriesController < ApplicationController
   # GET /factories/1.xml
   def show
     @factory = Factory.find(params[:id])
+    @widget = Widget.new(:factory_id => @factory[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -31,7 +32,7 @@ class FactoriesController < ApplicationController
       format.xml  { render :xml => @factory }
     end
   end
-
+  
   # GET /factories/1/edit
   def edit
     @factory = Factory.find(params[:id])
