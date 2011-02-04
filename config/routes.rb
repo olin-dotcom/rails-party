@@ -1,7 +1,7 @@
 RailsParty::Application.routes.draw do
   resources :factories
   resources :widgets, :except => :new
-  root :to => "widgets#index"
+  root :to => "factories#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
