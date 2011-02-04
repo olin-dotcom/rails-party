@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+	<th>Price</th>
     <th>Description</th>
     <th></th>
     <th></th>
@@ -12,6 +13,7 @@
 <% @widgets.each do |widget| %>
   <tr>
     <td><%= widget.name %></td>
+	<td><%= widget.price %></td>
     <td><%= widget.description %></td>
     <td><%= link_to 'Show', widget %></td>
     <td><%= link_to 'Edit', edit_widget_path(widget) %></td>
