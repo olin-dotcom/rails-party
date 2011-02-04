@@ -21,17 +21,6 @@ class WidgetsController < ApplicationController
     end
   end
 
-  # GET /widgets/new
-  # GET /widgets/new.xml
-  def new
-    @widget = Widget.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @widget }
-    end
-  end
-
   # GET /widgets/1/edit
   def edit
     @widget = Widget.find(params[:id])
