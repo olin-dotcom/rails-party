@@ -4,7 +4,7 @@ describe Widget do
   it "should have a name" do
     bad_widget = Widget.create(:name => '', 
                                :description => 'description',
-                               :price => 'price' )
+                               :price => 3 )
                                
     bad_widget.should_not be_valid
     bad_widget.should have(1).error_on(:name)
@@ -16,8 +16,34 @@ describe Widget do
                                :price => '' )
 
     bad_widget.should_not be_valid
-    bad_widget.should have(1).error_on(:price)
+    bad_widget.should have(2).errors_on(:price)
   end    
+  
+  it "should have a valid price" do
+    bad_widget = Widget.create(:name => 'name', 
+                                :description => 'description',
+                                :price => 'price' )
+    bad_widget.should_not be_valid
+    bad_widget.should have(1).errors_on(:price)
+                                
+  end
+  
+  it "should have a price greater than 0.01" do
+    bad_widget = Widget.create(:name => 'name', 
+                                :description => 'description',
+                                :price => 0 )
+    bad_widget.should_not be_valid
+    bad_widget.should have(1).errors_on(:price)
+  end
+  
+  it "should be unique in name" do
+    first = Widget.create(:name => 'name', 
+              :description => 'd', :price => 10.00)
+    second = Widget.create(:name => 'name', 
+              :description => 'd', :price => 10.00)
+    first.should be_valid
+    second.should_not be_valid
+  end
 
   it "should have a description" do
     bad_widget = Widget.create(:name => 'name', 
@@ -33,7 +59,7 @@ describe Widget do
   end
   
   it "has one after adding one" do
-    Widget.create(:name => 'name', :description => 'foo', :price => 'price')
+    Widget.create(:name => 'name', :description => 'foo', :price => 3)
     Widget.count.should == 1
   end
   
@@ -42,7 +68,8 @@ describe Widget do
   end
   
   it "should have none after removing one" do
-    w = Widget.create(:name => 'name', :description => 'foo', :price => 'price')
+    w = Widget.create(:name => 'name', :description => 'foo', :price => 3)
+    Widget.count.should == 1
     w.destroy
     Widget.count.should == 0
   end

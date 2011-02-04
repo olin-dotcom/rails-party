@@ -1,5 +1,7 @@
 class Widget < ActiveRecord::Base
   validates :name, :price, :description, :presence => true
+  validates :price, :numericality => { :greater_than => 0.01 }
+  validates :name, :uniqueness => true
 end
 
 # == Schema Information
