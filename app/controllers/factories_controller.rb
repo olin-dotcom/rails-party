@@ -14,6 +14,7 @@ class FactoriesController < ApplicationController
   # GET /factories/1.xml
   def show
     @factory = Factory.find(params[:id])
+    @factory_widgets = Widget.find_all_by_factory_id(@factory[:id])
     @widget = Widget.new(:factory_id => @factory[:id])
 
     respond_to do |format|
